@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  
+  --color-brand: #dfba73; /* Champagne Metallic Gold */
+  --color-brand-light: #f3e5ab; /* Soft Cream Warm White */
+  --color-gold: #dfba73;
+  --color-gold-dark: #b59453;
+  --color-gold-light: #f6ebd0;
+  --color-bg-dark: #030303;
+  --color-bg-obsidian: #050505;
+  --color-bg-card: #0a0a0c;
+  --color-bg-card-hover: #121215;
+  --color-border-subtle: rgba(223, 186, 115, 0.08);
+}
+
+/* Custom global styles & scrollbar overrides */
+body {
+  background-color: #030303;
+  color: #f4f4f5;
+  font-family: var(--font-sans);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #030303;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(223, 186, 115, 0.15);
+  border-radius: 99px;
+  border: 1px solid rgba(223, 186, 115, 0.05);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(223, 186, 115, 0.3);
+}
+
+/* Custom global utility animations or grid overlays */
+.grid-lines {
+  background-size: 50px 50px;
+  background-image: linear-gradient(to right, rgba(223, 186, 115, 0.015) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(223, 186, 115, 0.015) 1px, transparent 1px);
+}
+
+/* Masked reveal container */
+.mask-text-reveal {
+  overflow: hidden;
+  display: block;
+}
+
+/* Metallic sweeping glare animation */
+@keyframes metallic-sweep {
+  0% {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+  100% {
+    transform: translateX(200%) skewX(-15deg);
+  }
+}
+
+.metallic-sweep-trigger:hover .metallic-sweep-bar {
+  animation: metallic-sweep 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Radial light glow effects */
+.ambient-gold-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(223, 186, 115, 0.04) 0%, transparent 70%);
+}
+
+/* Hide cursor on desktop if custom cursor is active */
+@media (min-width: 1024px) {
+  .custom-cursor-active, 
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
+}

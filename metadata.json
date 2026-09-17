@@ -1,0 +1,6 @@
+{
+  "name": "Vantixio Studios",
+  "description": "Premium technology and custom software engineering studio.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
